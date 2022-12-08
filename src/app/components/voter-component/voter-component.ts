@@ -10,14 +10,11 @@ export class VoterComponent implements OnInit {
   @Input() noAnswer: string;
   @Output() output = new EventEmitter<boolean>();
 
-  private isUpVote: boolean;
-
   constructor() {}
 
   ngOnInit(): void {}
 
-  public vote() {
-    this.isUpVote = !this.isUpVote;
-    this.output.emit(this.isUpVote);
+  public vote(result: boolean) {
+    this.output.emit(result);
   }
 }

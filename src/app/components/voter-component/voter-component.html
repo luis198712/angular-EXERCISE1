@@ -1,7 +1,5 @@
 <h2>{{ question }}</h2>
 
-<span class="answer">{{yesAnwser}}</span>
+<button class="answer" (click)="vote(true)">{{yesAnwser}}</button>
 
-<span class="answer">{{noAnswer}}</span>
-
-<button (click)="vote()"> Vote </button>
+<button class="answer" (click)="vote(false)">{{noAnswer}}</button>

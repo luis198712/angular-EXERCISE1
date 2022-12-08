@@ -1,10 +1,11 @@
 <voter-component
-  question="Is this your apple"
+  [question]="question"
   [yesAnwser]="yesAnwser"
   [noAnswer]="noAnswer"
   (output)="output($event)"
 ></voter-component>
 
-<h2>User voted</h2>
-<div id="lastVote" *ngIf="isUpVote === true">{{ yesAnwser }}</div>
-<div id="lastVote" *ngIf="isUpVote === false">{{ noAnswer }}</div>
+<ng-container *ngIf="isUpVote !== null">
+  <h2>User voted</h2>
+  <div id="lastVote">{{ isUpVote === true ? yesAnwser : noAnswer }}</div>
+</ng-container>
