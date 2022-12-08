@@ -1,0 +1,10 @@
+<voter-component
+  question="Is this your apple"
+  [yesAnwser]="yesAnwser"
+  [noAnswer]="noAnswer"
+  (output)="output($event)"
+></voter-component>
+
+<h2>User voted</h2>
+<div id="lastVote" *ngIf="isUpVote === true">{{ yesAnwser }}</div>
+<div id="lastVote" *ngIf="isUpVote === false">{{ noAnswer }}</div>
